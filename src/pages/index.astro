@@ -22,7 +22,7 @@ const posts = sortDateDescending(
 		/>
 		<div class="flex flex-col flex-wrap flex-grow">
 			<h1
-				class="text-center bg-gradient-to-r from-yellow-500 to-yellow-900 bg-clip-text text-transparent text-5xl mb-[0.7em]"
+				class="text-center bg-gradient-to-r from-yellow-500 to-stone-900 bg-clip-text text-transparent text-5xl mb-[0.7em]"
 			>
 				Welcome to the<b> LSE</b> African and Caribbean society!
 			</h1>
@@ -46,16 +46,8 @@ const posts = sortDateDescending(
 					target="_blank"
 					rel="noreferrer noopener"
 				>
-					<span class="sr-only">Link to my YouTube channel</span>
-					<svg
-						xmlns="http://www.w3.org/2000/svg"
-						viewBox="0 0 576 512"
-						fill="#c4302b"
-					>
-						<path
-							d="M549.655 124.083c-6.281-23.65-24.787-42.276-48.284-48.597C458.781 64 288 64 288 64S117.22 64 74.629 75.486c-23.497 6.322-42.003 24.947-48.284 48.597-11.412 42.867-11.412 132.305-11.412 132.305s0 89.438 11.412 132.305c6.281 23.65 24.787 41.5 48.284 47.821C117.22 448 288 448 288 448s170.78 0 213.371-11.486c23.497-6.321 42.003-24.171 48.284-47.821 11.412-42.867 11.412-132.305 11.412-132.305s0-89.438-11.412-132.305zm-317.51 213.508V175.185l142.739 81.205-142.739 81.201z"
-						></path></svg
-					>
+					<span class="sr-only">Link to my tiktok channel</span>
+					<img src="/images/tiktok logo.jpg" />
 				</a>
 				<a
 					class="w-8 h-8 flex scale-1 hover:scale-125 transition-[scale] justify-center"
@@ -81,26 +73,25 @@ const posts = sortDateDescending(
 					rel="noreferrer noopener"
 				>
 					<span class="sr-only">Link to my Instagram</span>
-					<svg:></svg:></a
-				>
+					<img src="/images/instagram icon.jpg" />
+				</a>
 			</div>
 		</div>
 	</section>
-</BaseLayout>
 
-<section>
-	<h2
-		class="mx-auto text-center mb-8 bg-gradient-orange text-transparent bg-clip-text text-4xl border-b-2 border-red-300 font-semibold w-fit"
-	>
-		<a
-			href="mailto:yourmailinglist@example.com"
-			target="_blank"
-			style="display: block; text-align: center; font-size: 24px; color: brown; text-decoration: underline;"
-			>Join Our Mailing List</a
+	<section>
+		<h2
+			class="mx-auto text-center mb-8 bg-gradient-orange text-transparent bg-clip-text text-4xl border-b-2 border-red-300 font-semibold w-fit"
 		>
-
-		<div class="flex flex-wrap flex-col justify-center gap-12">
-			{posts.map((post) => <ArticleCard content={post} />)}
-		</div>
-	</h2>
-</section>
+			<a
+				href="mailto:yourmailinglist@example.com"
+				target="_blank"
+				style="display: block; text-align: center; font-size: 24px; color: brown; text-decoration: underline;"
+				>Join Our Mailing List</a
+			>
+		</h2>
+	</section>
+	<div class="flex flex-wrap flex-col justify-center gap-12">
+		{posts.map((post) => <ArticleCard content={post} />)}
+	</div>
+</BaseLayout>

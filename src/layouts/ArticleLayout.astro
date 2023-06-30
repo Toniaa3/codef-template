@@ -17,47 +17,48 @@ const date = new Date(content.date);
   >
     {title}
   </h1>
+  <body class="bg-slate-50">
+    ( image ? (
+    <Fragment>
+      <img
+        class="w-10/12 mx-auto aspect-video"
+        src={image}
+        alt={imageDescription ?? title}
+      />
+    </Fragment>
+    ) : null }
 
-  {
-    image ? (
-      <Fragment>
-        <img
-          class="w-10/12 mx-auto aspect-video"
-          src={image}
-          alt={imageDescription ?? title}
-        />
-      </Fragment>
-    ) : null
-  }
-
-  <div class="flex flex-wrap justify-evenly mb-9 mt-2">
-    <div>
-      <svg
-        xmlns="http://www.w3.org/2000/svg"
-        class="h-6 w-6 inline"
-        fill="none"
-        viewBox="0 0 24 24"
-        stroke="currentColor"
-        stroke-width="2"
-      >
-        <path
-          stroke-linecap="round"
-          stroke-linejoin="round"
-          d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
-      </svg>
-      <time datetime={date.toISOString()}
-        >{
-          date.toLocaleDateString("en-uk", {
-            day: "numeric",
-            month: "long",
-            year: "numeric",
-          })
-        }</time
-      >
+    <div class="flex flex-wrap justify-evenly mb-9 mt-2">
+      <div>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="h-6 w-6 inline"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+        </svg>
+        <time datetime={date.toISOString()}
+          >{
+            date.toLocaleDateString("en-uk", {
+              day: "numeric",
+              month: "long",
+              year: "numeric",
+            })
+          }</time
+        >
+      </div>
     </div>
-  </div>
 
-  <div class="prose md:prose-lg 2xl:prose-xl px-4 mx-auto prose-pre:font-mono">
-    <slot />
-  </div>
+    <div
+      class="prose md:prose-lg 2xl:prose-xl px-4 mx-auto prose-pre:font-mono"
+    >
+      <slot />
+    </div>
+  </body>
 </BaseLayout>
